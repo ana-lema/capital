@@ -706,6 +706,9 @@ body.popup-active {
   align-items: center;
   padding-left: 12px;
 }
+.mode-switcher .mode-switcher__item .mode-switcher__item-title {
+  letter-spacing: -0.2px;
+}
 .mode-switcher .mode-switcher__item .mode-switcher__item-info {
   display: block;
   font-weight: 500;
