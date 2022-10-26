@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+
+    <title>Test task</title>
+
+    <!-- Stylesheets -->
+    <link href="normalize.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+  </head>
+  <body>
+
+    <div id="wrapper">
+
+      <header class="header">
+        <div class="inner-wrapper">
+          <nav class="header__nav">
+            <button class="header__nav-back"></button>
+            <h1>Bitcoin/USD</h1>
+          </nav>
+        </div>
+      </header>
+
+      <section class="section">
+        <div class="price">
+          <i class="icon icon_price-up"></i>
+          <span class="price__num">1,000.00</span>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section__bg">
+          <div class="section__inner">
+            <div class="selected-mode" id="modeToggle">
+              <i class="icon icon_leverage"></i>
+              <span class="selected-mode__txt">Leverage mode</span>
+              <i class="icon icon_arrow-down"></i>
+            </div>
+          </div>
+
+          <div class="section__inner">
+            <label class="input-number">
+              Amount to buy
+              <input type="number" min="0" value="1" />
+              <button class="input-number__button input-number__button_minus" type="button" onclick="this.parentNode.querySelector('[type=number]').stepDown();"></button>
+              <button class="input-number__button input-number__button_plus" type="button" onclick="this.parentNode.querySelector('[type=number]').stepUp();"></button>
+            </label>
+            <div class="amount-available">
+              <div class="amount-available__contents">
+                <span class="amount-available__txt">USD.CX AVAILABLE</span>
+                10,000.00
+              </div>
+              <i class="icon icon_arrow-down"></i>
+            </div>
+            <div class="percentage">
+              <div class="percentage__div active">
+                <span class="percentage__div-mark"></span>
+                5%
+              </div>
+              <div class="percentage__div">
+                <span class="percentage__div-mark"></span>
+                10%
+              </div>
+              <div class="percentage__div">
+                <span class="percentage__div-mark"></span>
+                25%
+              </div>
+              <div class="percentage__div">
+                <span class="percentage__div-mark"></span>
+                50%
+              </div>
+              <div class="percentage__div">
+                <span class="percentage__div-mark"></span>
+                75%
+              </div>
+              <div class="percentage__div">
+                <span class="percentage__div-mark"></span>
+                100%
+              </div>
+            </div>
+          </div>
+
+          <div class="section__inner">
+            <div class="price-toggle">
+              <label class="toggle">
+                <span class="toggle__txt">Buy when price is</span>
+                <input type="checkbox" />
+                <span class="mark"></span>
+              </label>
+            </div>
+          </div>
+
+          <div class="section__inner">
+            <div class="total">
+              <div class="total__comission">
+                <span class="total__txt">COMISSION</span>
+                $0.00
+              </div>
+              <div class="total__required">
+                <span class="total__txt">USD.CX REQUIRED</span>
+                $1,000.00
+              </div>
+            </div>
+          </div>
+
+          <div class="section__inner">
+            <div class="leverage">
+              <div class="leverage__txt">
+                LEVERAGE
+                <i class="icon icon_info"></i>
+              </div>
+              <div class="leverage__ratios">
+                <div class="leverage__ratio">1x</div>
+                <div class="leverage__ratio active">2x</div>
+                <div class="leverage__ratio">5x</div>
+                <div class="leverage__ratio">10x</div>
+                <div class="leverage__ratio">20x</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section__bg">
+          <div class="loss-toggle">
+            <label class="toggle">
+              <span class="toggle__txt">Stop loss</span>
+              <input type="checkbox" />
+              <span class="mark"></span>
+            </label>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section__bg">
+          <div class="profit-toggle">
+            <label class="toggle">
+              <span class="toggle__txt">Take profit</span>
+              <input type="checkbox" />
+              <span class="mark"></span>
+            </label>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-fixed">
+        <div class="inner-wrapper">
+          <button class="button section-fixed__button">Buy</button>
+        </div>
+        <div class="tapbar">
+          <div class="tapbar__item">
+            <i class="icon icon_tapbar-leverage"></i>
+            <span class="tapbar__item-txt">Leverage</span>
+          </div>
+          <div class="tapbar__item active">
+            <i class="icon icon_tapbar-exchange"></i>
+            <span class="tapbar__item-txt">Exchange</span>
+          </div>
+          <div class="tapbar__item">
+            <i class="icon icon_tapbar-portfolio"></i>
+            <span class="tapbar__item-txt">Portfolio</span>
+          </div>
+          <div class="tapbar__item">
+            <i class="icon icon_tapbar-search"></i>
+            <span class="tapbar__item-txt">Search</span>
+          </div>
+          <div class="tapbar__item">
+            <i class="icon icon_tapbar-account"></i>
+            <span class="tapbar__item-txt">Account</span>
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+    <div id="overlay"></div>
+
+    <div id="popup">
+      <div class="popup">
+        <div class="popup__body">
+          <h2 class="popup__headline">Switch trading mode</h2>
+          <div class="mode-switcher">
+            <div class="mode-switcher__item">
+              <i class="icon icon_exchange"></i>
+              <label class="radio mode-switcher__radio">
+                <span class="radio__txt">
+                  Exchange mode
+                  <span class="mode-switcher__item-info">Tokens exchange using own funds. All your tokens can be found in the “Wallets”.</span>
+                </span>
+                <input type="radio" name="radio" />
+                <span class="mark"></span>
+              </label>
+            </div>
+            <div class="mode-switcher__item">
+              <i class="icon icon_leverage"></i>
+              <label class="radio mode-switcher__radio">
+                <span class="radio__txt">
+                  Leverage mode
+                  <span class="mode-switcher__item-info">Trading with up to x500 leverage. Your trades can be found in the “Portfolio”.</span>
+                </span>
+                <input type="radio" name="radio" checked />
+                <span class="mark"></span>
+              </label>
+            </div>
+          </div>
+          <div class="popup__close">
+            <button class="button popup__close-button">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
